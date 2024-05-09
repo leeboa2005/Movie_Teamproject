@@ -1,42 +1,6 @@
-/* 검색창  영역*/
-.search {
-  width: 560px;
-  margin: 50px auto 0 auto;
-  position: relative;
-}
-
-#movieSearch {
-  width: 100%;
-  border-radius: 20px;
-  border: 1.5px solid #dfe1e5;
-  margin: 10px 0;
-  padding: 10px 12px;
-  font-family: var(--icon);
-}
-
-#searchButton {
-  font-size: 21px;
-  color: #585858;
-  border: 0;
-  outline: none;
-  position: absolute;
-  right: 10px;
-  top: 16px;
-  margin: 0;
-  background-color: transparent;
-}
-
-.searching {
-  padding-top: 10px;
-  padding-right: 10px;
-  font-family: 'Do Hyeon', sans-serif;
-  font-size: 30px;
-  color: rgb(213 197 197);
-}
-
-/* 메인 슬라이더 영역 ( 지우시고 작업하시면 됩니다 )*/
+/* Main Slider */
 #carouselContainer {
-  width: 100vw;
+  width: 100%;
   height: 90vh;
   overflow: hidden;
   position: relative;
@@ -60,6 +24,39 @@
   background-repeat: no-repeat;
   background-size: cover;
   float: left;
+  position: relative;
+  cursor: pointer;
+}
+
+.slide_text_box {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 400px;
+}
+
+.slide_text_box.color_white {
+  color: #fff !important;
+}
+
+.slide_text_box.color_black {
+  color: #000 !important;
+}
+
+.slide_text_box h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.slide_text_box p {
+  font-size: var(--font-sub-title-size);
+  white-space: wrap;
+  margin-bottom: 15px;
+}
+
+.slide_text_box span {
+  font-size: var(--font-sub-title-size);
+  font-size: 18px;
 }
 
 .fa-chevron-left,
@@ -73,14 +70,14 @@
 .fa-chevron-left {
   position: absolute;
   top: 300px;
-  left: 2vw;
+  left: 3.5vw;
   cursor: pointer;
 }
 
 .fa-chevron-right {
   position: absolute;
   top: 300px;
-  left: 96vw;
+  left: 93.5vw;
   cursor: pointer;
 }
 
@@ -103,6 +100,7 @@
   width: 70%;
   height: 70%;
 }
+
 .fa-xmark {
   position: absolute;
   right: 2%;
@@ -115,27 +113,487 @@
   visibility: hidden;
 }
 
-/* 영화 상세페이지 영역*/
-.subpage {
+/* Notice */
+#Wlogo {
+  display: flex;
+  align-items: center;
 }
 
-/* 시사회/무대인사 영역*/
-.preview {
-  height: 200px;
+#Wlogo img {
+  width: 85px;
 }
 
-/* 더 많은 정보 영역*/
-
-.information {
-  height: 200px;
-}
-
-/* 공지사항 영역*/
 .notice {
-  height: 200px;
+  margin-bottom: 30px;
 }
 
-/* 광고 배너 영역*/
+.notice h2 {
+  margin-bottom: 15px;
+}
+
+.noticeContainer {
+  position: relative;
+}
+
+.noticeContainer::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #AAA;
+}
+
+.noticeItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  opacity: 0;
+  transition: opacity 3s ease-in-out, transform 1s ease;
+  transform: translateY(5px);
+  visibility: hidden;
+  padding: 15px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--font-default);
+}
+
+.noticeVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.noticeItem_title {
+  font-weight: 700;
+  margin-right: 23px;
+  position: relative;
+}
+
+.noticeItem_title::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 5px;
+  height: 15px;
+  border-left: 1px solid #707070;
+}
+
+/* Box Office */
+.information {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.information h2 {
+  margin-bottom: 50px;
+}
+
+.rolling_movie_slides_wrapper {
+  width: 100%;
+  height: 375px;
+  overflow: hidden;
+  margin: 0 auto 6px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.rolling_movie_slides {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.rolling_movie_slides.original {
+  animation: 200s linear 0s infinite normal forwards running slide01;
+}
+
+.rolling_movie_slides.clone {
+  animation: 200s linear 0s infinite normal none running slide02;
+}
+
+.rolling_movie_slides li {
+  position: relative;
+  width: 250px;
+  height: 375px;
+  border-radius: 10px;
+}
+
+.rolling_movie_slides li {
+  margin-right: 6px;
+}
+
+.rolling_movie_slides li img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.rolling_movie_slides li .rolling_movie_slides-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s;
+  border-radius: 10px;
+}
+
+.rolling_movie_slides li .rolling_movie_slides_cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.4s;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 14px;
+  min-width: 28px;
+  padding: 8px 16px;
+  border-radius: 980px;
+  letter-spacing: -0.016em;
+  font-weight: 700;
+  background: #fff;
+  color: #1d1d1f;
+}
+
+.rolling_movie_slides li .rolling_movie_slides-content:hover {
+  opacity: 0.999;
+}
+
+.rolling_movie_slides li .rolling_movie_slides-content:hover a {
+  transform: translate(-50%, -50%);
+  opacity: 0.999;
+}
+
+.rolling_movie_controls {
+  width: fit-content;
+  height: 50px;
+  position: absolute;
+  top: 108px;
+  right: 0;
+}
+
+.rm_stop_btn,
+.rm_play_btn {
+  font-size: 26px;
+  display: none;
+}
+
+.rm_stop_btn.active,
+.rm_play_btn.active {
+  display: block;
+}
+
+/** Animation **/
+/* Original */
+@keyframes slide01 {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-100%);
+  }
+
+  50.01% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Clone */
+@keyframes slide02 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+/* Search */
+.search {
+  width: 720px;
+  margin: 50px auto 0 auto;
+  position: relative;
+}
+
+#movieSearch {
+  width: 100%;
+  border-radius: 30px;
+  border: 2px solid #dfe1e5;
+  padding: 16px 23px;
+  font-family: var(--font-default);
+  font-size: 18px;
+}
+
+#searchButton {
+  font-size: 21px;
+  color: #585858;
+  border: 0;
+  outline: none;
+  position: absolute;
+  right: 16px;
+  top: 20px;
+  margin: 0;
+  background-color: transparent;
+  font-family: var(--icon);
+}
+
+.searching {
+  padding-top: 10px;
+  padding-right: 10px;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 30px;
+  color: rgb(213 197 197);
+}
+
+/* Weekly Movie */
+/* Card Font */
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Do+Hyeon&family=Macondo&display=swap");
+
+* {
+  font-family: "Do Hyeon", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#cardsGroup {
+  display: grid;
+  grid-template-columns: repeat(4, 7fr);
+  grid-gap: 15px;
+  justify-content: center;
+  margin: 30px 0 100px 0;
+}
+
+.card:hover {
+  background-color: rgb(0, 0, 0);
+  color: var(--main-color);
+}
+
+.card {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.808);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card img {
+  width: 200px;
+  height: 300px;
+  margin-top: 15px;
+}
+
+.card h2 {
+  font-size: 25px;
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  padding: 15px;
+}
+
+.card p {
+  font-size: 20px;
+  line-height: 22px;
+  color: #666;
+  font-family: "Macondo";
+  font-weight: 300;
+  font-style: normal;
+  margin-top: 20px;
+}
+
+/* Banner */
 .banner {
-  height: 200px;
+  margin-bottom: 90px;
+}
+
+#adBanner {
+  width: 980px;
+  height: 190px;
+  background-image: url("../img/main/AbigailBanner_large.jpg");
+  background-size: cover;
+}
+
+/* Responsive Style */
+@media only screen and (max-width: 1068px) {
+  .youtubePopup {
+    width: 720px;
+    height: 464px;
+  }
+
+  .rolling_movie_slides_wrapper,
+  .rolling_movie_slides li {
+    height: 300px;
+  }
+
+  .rolling_movie_slides li {
+    width: 200px;
+  }
+
+  .rm_stop_btn,
+  .rm_play_btn {
+    font-size: 21px;
+  }
+
+  .information {
+    padding-bottom: 30px;
+  }
+
+  .information h2 {
+    margin-bottom: 30px;
+  }
+
+  #cardsGroup {
+    grid-template-columns: repeat(3, 7fr);
+  }
+
+  .fa-chevron-left,
+  .fa-chevron-right {
+    font-size: 40px;
+  }
+
+  .fa-chevron-right {
+    left: 92vw;
+  }
+
+  #adBanner {
+    width: 719px;
+    height: 132px;
+    background-image: url("../img/main/AbigailBanner_medium.jpg");
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  .youtubePopup {
+    width: 432px;
+    height: 278px;
+  }
+
+  .rolling_movie_slides_wrapper,
+  .rolling_movie_slides li {
+    height: 225px;
+  }
+
+  .rolling_movie_slides li {
+    width: 150px;
+  }
+
+  .fa-chevron-left,
+  .fa-chevron-right {
+    font-size: 30px;
+  }
+
+  .fa-chevron-right {
+    left: 90vw;
+  }
+
+  .search {
+    width: 420px;
+  }
+
+  #movieSearch {
+    padding: 15px 20px;
+  }
+
+  .card {
+    width: 180px;
+    margin: 0 auto;
+    height: 330px;
+    overflow-y: auto;
+  }
+
+  .card img {
+    width: 150px;
+    height: 225px;
+  }
+
+  .card::-webkit-scrollbar {
+    width: 1px;
+    border-radius: 10px;
+  }
+
+  .card::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
+
+  .card::-webkit-scrollbar-thumb {
+    height: 50%;
+    background-color: var(--main-color);
+    border-radius: 10px;
+  }
+
+  .card h2 {
+    font-size: var(--font-sub-title-size);
+  }
+
+  .card p {
+    font-size: var(--font-default);
+  }
+
+  #adBanner {
+    width: 419px;
+    height: 77px;
+    background-image: url("../img/main/AbigailBanner_small.jpg");
+  }
+}
+
+@media screen and (max-width: 630px) {
+  #cardsGroup {
+    grid-template-columns: repeat(2, 0.5fr);
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 435px) {
+
+  .youtubePopup {
+    width: 302px;
+    height: 194px;
+  }
+
+  .card {
+    width: 150px;
+    height: 300px;
+  }
+
+  .card img {
+    width: 130px;
+    height: 195px;
+  }
+}
+
+
+@media only screen and (max-width: 420px) {
+  #adBanner {
+    width: 320px;
+    height: 59px;
+    background-image: url("../img/main/AbigailBanner_xsmall.jpg");
+  }
+
+  .search {
+    width: 320px;
+  }
 }

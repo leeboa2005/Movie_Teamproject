@@ -1,0 +1,288 @@
+/* Layout */
+main {
+  width: var(--default-width);
+  margin: 0 auto;
+}
+
+.movieInformation {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 60px;
+  margin: 60px auto;
+  place-items: center;
+  align-items: baseline;
+}
+
+/* Movie Poster */
+.poster {
+  width: 350px;
+  height: 530px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin-top: 60px;
+}
+
+/* Movie Title */
+#movie-title {
+  font-size: var(--font-title-size);
+  font-weight: var(--font-title-weight);
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Movie Information */
+.movie_info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.movie_info li {
+  position: relative;
+  margin-right: 18px;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.movie_info li::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  height: 14px;
+  border-left: 1px solid var(--font-footer-color);
+}
+
+.movie_info li:first-child::before {
+  display: none;
+}
+
+/* Movie Description */
+.overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: auto;
+  font-size: var(--font-text-size);
+  line-height: 1.3;
+  width: 572px;
+}
+
+#movie-rating {
+  border-bottom: solid 1px #ccc;
+  margin: 0px;
+  padding: 20px 0px;
+  font-size: var(--font-sub-title-size);
+}
+
+/* Movie Recommend */
+.movieRecommend {
+  width: 100%;
+  height: 305px;
+  overflow: hidden;
+  position: relative;
+}
+
+.movieRecommend_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.relate_btn_container {
+  padding-top: 10px;
+}
+
+.movieRecommend_top .relate_btn_container button {
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.relatePrevBtn {
+  margin: 0 10px 0 10px;
+}
+
+#movie-genre {
+  font-size: var(--font-sub-title-size);
+  font-weight: var(--font-title-weight);
+  margin: 0px;
+  padding: 15px 0px;
+  align-items: center;
+}
+
+#recommend-list {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  left: 0;
+}
+
+#recommend-list li {
+  width: 150px;
+  height: 225px;
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+}
+
+#recommend-list li img {
+  width: 150px;
+}
+
+.noRelatedWarning {
+  font-size: 24px;
+  color: darkgray;
+}
+
+.hidden {
+  display: none;
+}
+
+#recommend-list li,
+#recommend-list li img {
+  border-radius: 6px;
+}
+
+/* Review */
+.review-section {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-gap: 20px;
+  padding: 30px 0;
+  border-top: solid 1px #ccc;
+}
+
+.review-section>h3 {
+  text-align: center;
+  align-self: center;
+  font-weight: var(--font-title-weight);
+}
+
+/* Review Form */
+#review-form {
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr;
+  grid-gap: 20px;
+}
+
+#review-text {
+  font-size: var(--font-text-size);
+  font-weight: 500;
+  line-height: 100%;
+  padding-left: 14px;
+  padding-top: 14px;
+}
+
+#review-password {
+  text-align: center;
+  font-size: var(--font-text-size);
+  padding: 10px;
+}
+
+#submit,
+.review-list button {
+  font-size: var(--font-text-size);
+  background-color: var(--gray-button-color);
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Review List */
+.review_wrap {
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #aaa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review_wrap div:nth-child(1) {
+  width: 70%;
+}
+
+.review-list button:nth-of-type(1) {
+  background-color: var(--main-color);
+  margin-right: 10px;
+}
+
+.review-list button:nth-of-type(2) {
+  background-color: var(--gray-button-color);
+}
+
+/* Responsive Style */
+@media only screen and (max-width: 1068px) {
+  .poster {
+    width: 250px;
+    height: 375px;
+  }
+
+  .movie_info {
+    line-height: 1.5;
+  }
+
+  .movie_info li:last-child::before {
+    display: none;
+  }
+
+  .overview {
+    width: 398px;
+  }
+
+  #review-form {
+    grid-template-columns: 4fr 1.5fr 1.5fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .movieInformation {
+    width: var(--default-width);
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  .movie_info {
+    flex-direction: column;
+  }
+
+  .movie_info li {
+    width: 40%;
+    margin-bottom: 5px;
+    margin-left: 7px;
+  }
+
+  .movie_info li::before {
+    display: none;
+  }
+
+  #review-form {
+    grid-template-columns: 1fr;
+  }
+
+  .overview {
+    width: 100%;
+  }
+
+  .movieRecommend_top .relate_btn_container button {
+    font-size: 21px;
+  }
+
+  .review_wrap {
+    display: block;
+  }
+
+  .review_wrap div:nth-child(1) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

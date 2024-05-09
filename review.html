@@ -1,32 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MovieReview</title>
-    <link rel="stylesheet" href="./review.css" />
-  </head>
-  <body>
-    <div class="movieInformation">
-      <div class="poster" id="movie-poster"></div>
-      <div class="overview">
-        <p id="movie-description">Movie Description</p>
-        <p id="movie-rating">Rating :</p>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="subject" content="팀프로젝트" />
+  <meta name="description" content="팀프로젝트 영화리뷰 리뷰 페이지 입니다." />
+  <meta name="keywords" content="프론트엔드, 개발자, 영화, 영화리뷰, 팀프로젝트" />
+  <meta name="author" content="한예슬,이수진,이승빈,강희진,김연희,이보아" />
+  <title>팀프로젝트 - 영화 리뷰 페이지</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon.png">
+  <link rel="stylesheet" href="./style/reset.css" />
+  <link rel="stylesheet" href="./style/common.css" />
+  <link rel="stylesheet" href="./style/review.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" />
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="contentWrapper">
+      <!-- Header -->
+      <header class="header">
+        <div class="header_container">
+          <h1 id="logo">
+            <a href="/" aria-label="홈으로">
+              <img src="./img/main/header_logo.png" alt="CINEMA 로고" />
+            </a>
+          </h1>
+          <a her="#" class="nav_toggleBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+          <nav class="pc_nav">
+            <ul class="nav_list">
+              <li><a href="/review.html?id=13">Review</a></li>
+              <li><a href="#">Reservation</a></li>
+              <li><a href="#">Movies</a></li>
+              <li><a href="#">Event</a></li>
+              <li><a href="#">Store</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- Mobile Nav -->
+      <nav class="mb_nav">
+        <ul class="nav_list">
+          <li><a href="/review.html?id=13">Review</a></li>
+          <li><a href="#">Reservation</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">Event</a></li>
+          <li><a href="#">Store</a></li>
+        </ul>
+      </nav>
+      <main class="main">
+        <div class="movieInformation">
+          <!-- movie poster -->
+          <div class="poster" id="movie-poster"></div>
+          <!-- movie title, information, description, rating  -->
+          <div class="overview">
+            <h2 id="movie-title"></h2>
+            <ul class="movie_info">
+              <li><span class="movie_info_date">2024.05.09</span> Release</li>
+              <li><span class="movie_info_time"><i class="fa fa-clock-o" aria-hidden="true"></i> 129 minutes</span></li>
+              <li><span class="movie_info_grade"><span class="roboto"> all ages</span></span></li>
+              <li><span class="movie_info_moviegoers">27.7</span>viewers</li>
+            </ul>
+            <p id="movie-description"></p>
+            <p id="movie-rating"></p>
+            <!-- related movie -->
+            <div class="movieRecommend">
+              <div class="movieRecommend_top">
+                <h3 id="movie-genre">Related Movie</h3>
+                <div class="relate_btn_container">
+                  <button class="relatePrevBtn">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i></button> <button class="relateNextBtn"><i
+                      class="fa fa-angle-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <p class="noRelatedWarning hidden">Sorry, there's no similar movie..😶‍🌫️ </p>
+              <ul id="recommend-list"></ul>
+            </div>
+          </div>
+        </div>
+        <!-- review -->
+        <div class="review-section">
+          <h3>Write a Review</h3>
+          <form id="review-form">
+            <textarea id="review-text" placeholder="Please write a review" autofocus></textarea>
+            <input type="password" id="review-password" placeholder="Please enter your password" />
+            <button type="submit" id="submit">Submit</button>
+          </form>
+          <h3 id="reviews">Reviews</h3>
+          <ul class="review-list" id="review-list"></ul>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer_content">
+        <div class="footer_infbox">
+          <img class="footer_logo" src="./img/main/footer_logo.png" alt="푸터 로고" />
+          <ol class="made_list">
+            <li>한예슬</li>
+            <li>이수진</li>
+            <li>이승빈</li>
+            <li>강희진</li>
+            <li>김연희</li>
+            <li>이보아</li>
+          </ol>
+          <p>Copyright © CINEMA Cultureworks All Right Reserved.</p>
+        </div>
+        <ul class="social_media_list">
+          <li>
+            <a href="#">
+              <img src="./img/main/footer_youtube_icon.png" alt="유투브" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./img/main/footer_facebook_icon.png" alt="페이스북" /></a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/main/footer_instagram_icon.png" alt="인스타그램" />
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
-    <div class="review-section">
-      <h3>Write a Review</h3>
-      <form id="review-form">
-        <textarea
-          id="review-text"
-          rows="3"
-          placeholder="Enter your review"
-        ></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      <h3>Reviews</h3>
-      <ul class="review-list" id="review-list"></ul>
-    </div>
-    <script src="./modules/review.js" defer></script>
-  </body>
+    </footer>
+  </div>
+</body>
+<script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+<script type="module" src="./modules/review.js" defer></script>
+<script type="module" src="./modules/common.js"></script>
+
 </html>

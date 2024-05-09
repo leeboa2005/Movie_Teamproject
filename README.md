@@ -1,52 +1,101 @@
-# Movie_Project
-### 🖥️프로젝트 소개
-TMDB를 활용하여 바닐라 자바스크립트만으로 영화 리스트 조회 및 검색 UI를 구현하였습니다.
+# Team B.02 | Movie_Project
+### * 프로젝트 소개
+TMDB를 활용하여 바닐라 JS로 결과물을 온전히 만들며, 팀원들의 프로젝트 중 하나를 선정하여 팀프로젝트로 발전시킵니다. 
 
 <br> 
 
-### 🕰️개발 기간
-- 24.04.23 ~ 24.04.28
+### * 개발 기간
+- 24.05.01 ~ 24.05.08
 
 <br>
 
-### 📌기능
-- 검색창에 영화제목에 포함된 문자를 입력하면 대소문자 상관없이 문자가 포함된 영화 리스트가 나열됩니다.
-- 마우스를 카드위에 올려놓으면 카드배경색과 글씨색이 바뀌면서 마우스의 이동이 강조됩니다.
-- 카드 클릭시 영화 포스터와 id가 담긴 모달창이 보여집니다.
-- 사이트 제목창인 "Top Rated Movie List" 를 클릭시 새로고침됩니다.
+### * 기능
 
-  <br> 
+- #### 메인 페이지
+  - 캐러셀 슬라이드를 클릭시 영화 예고편이 새로운 창에서 재생됩니다.
+  - 카드로 나열된 영화 리스트에서 영화제목으로 검색이 가능합니다.
+  - 자동으로 재생되어 오른쪽에서 왼쪽으로 이동하는 영화 리스트가 있습니다.
+    - 포스터에 마우스를 올리면 재생이 멈추며, 클릭시 영화 상세페이지로 이동합니다.
+  - 오늘의 날씨가 어떤지 이미지를 통해 알 수 있습니다.
+  - 하단의 광고 배너를 통해 이벤트나 개봉예정일을 알 수 있습니다.
+  - 반응형으로 구현되어 작은크기의 화면에서도 일정한 비율이 유지됩니다.
+<br>
 
-### 💠와이어프레임
+- #### 상세 페이지
+  - 영화 포스터와 개요, 평점, 비슷한 장르의 영화추천 섹션과 리뷰작성 및 작성된 리뷰리스트가 보이는 섹션으로 크게 2가지 구성입니다.
+  - 비슷한 장르의 영화가 많을경우 `>` 클릭시 옆으로 이동하여 다음 추천영화를 확인할 수 있습니다.
+  - 추천 영화 클릭시 해당 영화의 상세페이지로 이동합니다.
+  - 영화 리뷰를 작성할 수 있으며, 수정 및 삭제가 가능합니다.
+  - 리뷰 작성시 8글자 이상, 알파벳 대문자를 포함하는 비밀번호에 대한 유효성 검사를 진행합니다.
+  - 반응형으로 구현되어 작은크기의 화면에서도 일정한 비율이 유지됩니다.
+
+  <br>
+ ---
+  ### * 초기 계획한 파일 구조
+![result_Mind Map Curved Right (5)](https://github.com/yeseul0809/Movie_Teamproject/assets/71476841/71673b9c-0d75-40f9-bdc5-7497e7673fc0)
+![result_Mind Map Curved Right (4)](https://github.com/yeseul0809/Movie_Teamproject/assets/71476841/db6cdfdd-f827-45c1-a213-18920e44594d)
+
+ ---
+### * 와이어프레임
 - 메인페이지
+
+<img src="https://github.com/yeseul0809/Movie_Teamproject/assets/166012944/4d4d4f7e-825a-4276-9660-afe18ee0cf08" width="30%"><img >
+ ---
+- 상세페이지
  
-<img src="https://github.com/yeseul0809/Movie_Project/assets/166012944/ce15cf1c-0e87-4f48-ac28-440052d72cfd" width="70%"><img >
-  ---
-- 모달팝업
-  
-<img src="https://github.com/yeseul0809/Movie_Project/assets/166012944/7d6b73d4-fd86-436c-8d1f-79d7374079c0" width="20%"><img >
+<img src="https://github.com/yeseul0809/Movie_Teamproject/assets/166012944/cde9594b-ebff-49cd-89c3-0aa85a814c39" width="30%"><img >
+
  ---
 <br>
 
-### 🗂️폴더구조
+### * 폴더구조
 ```
-📦MOVIE
-┣ 📂modules
-┃ ┣📜display.js
-┃ ┗📜main.js
-┣ 📂style
-┃ ┣📜card.css
-┃ ┣📜layout.css
-┃ ┗📜swal.css
-┗ 📜index.html
+📦 
+├─ .vscode
+│  └─ settings.json
+├─ README.md
+├─ img
+│  ├─ favicons
+│  │  └─ favicon.png
+│  └─ main
+│     ├─ AbigailBanner_large.jpg
+│     ├─ AbigailBanner_medium.jpg
+│     ├─ AbigailBanner_small.jpg
+│     ├─ AbigailBanner_xsmall.jpg
+│     ├─ cloud_weather.PNG
+│     ├─ footer_facebook_icon.png
+│     ├─ footer_instagram_icon.png
+│     ├─ footer_logo.png
+│     ├─ footer_youtube_icon.png
+│     ├─ header_logo.png
+│     ├─ sunnyday_weather.PNG
+│     └─ windy_weather.png
+├─ index.html
+├─ modules
+│  ├─ apiData.js
+│  ├─ common.js
+│  ├─ display.js
+│  ├─ main.js
+│  ├─ mainSlide.js
+│  ├─ review.js
+│  ├─ rolling_slider.js
+│  ├─ weather.js
+│  └─ youtube.js
+├─ review.html
+└─ style
+   ├─ common.css
+   ├─ main.css
+   ├─ reset.css
+   └─ review.css
 ```
 <br>
 
-### 🗄️파일설명
-- display.js : 입력받은 문자와 영화제목을 비교하여 동적으로 카드를 생성합니다. 카드 클릭시 이벤트리스너를 통해 모달팝업이 띄워집니다.
-- main.js : 영화 데이터 가져오기, 페이지 새로고침 기능, display 함수들을 호출합니다.
-- card.css : 각각의 카드와 카드가 모인 그룹의 전체적인 디자인입니다.
-- layout.css : header 와 검색창의 디자인입니다.
-- swal.css : 모달팝업창의 디자인입니다.
-- index.html : 페이지에서 참조하는 링크들과 전체적인 구조가 담겨있습니다.
+### * 함께한 팀원과 역할
+- 한예슬 : 조장 / 상세페이지 리뷰작성기능구현 및 CSS
+- 강희진 : 메인페이지 캐러셀 예고편 기능구현 및 상세페이지 영화추천 기능구현 / 모듈화
+- 이보아 : 메인페이지 슬라이드 기능구현 및 전반적인 레이아웃, 디자인
+- 김연희 : 현재날씨에 따른 이미지변화 기능구현, 발표
+- 이수진 : git 학습, 초기 HTML 구조
+- 이승빈 : HTML, CSS 학습
+
 

@@ -1,175 +1,211 @@
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="subject" content="팀프로젝트" />
-    <meta
-      name="description"
-      content="팀프로젝트 영화리뷰 메인 페이지 입니다."
-    />
-    <meta
-      name="keywords"
-      content="프론트엔드, 개발자, 영화, 영화리뷰, 팀프로젝트"
-    />
-    <meta name="author" content="한예슬,이수진,이승빈,강희진,김연희,이보아" />
-    <title>팀프로젝트 - 영화 페이지</title>
-    <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/common.css" />
-    <link rel="stylesheet" href="./style/main.css" />
-    <link rel="stylesheet" href="./style/card.css" />
-    <link rel="stylesheet" href="./style/swal.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css"
-    />
-  </head>
 
-  <body>
-    <div id="wrapper">
-      <div class="contentWrapper">
-        <!-- 해더 -->
-        <header class="header">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="subject" content="팀프로젝트" />
+  <meta name="description" content="팀프로젝트 영화리뷰 메인 페이지 입니다." />
+  <meta name="keywords" content="프론트엔드, 개발자, 영화, 영화리뷰, 팀프로젝트" />
+  <meta name="author" content="한예슬,이수진,이승빈,강희진,김연희,이보아" />
+  <title>팀프로젝트 - 영화 페이지</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon.png">
+  <link rel="stylesheet" href="./style/reset.css" />
+  <link rel="stylesheet" href="./style/common.css" />
+  <link rel="stylesheet" href="./style/main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" />
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="contentWrapper">
+      <!-- Header -->
+      <header class="header">
+        <div class="header_container">
           <h1 id="logo">
-            <!-- 날씨 기능 구현 영역-->
-            <img
-              src="./img/main/header_logo.png"
-              alt="CINEMA 로고"
-              width="150px"
-            />
+            <img src="./img/main/header_logo.png" alt="CINEMA 로고" />
           </h1>
-          <nav class="nav">
+          <a her="#" class="nav_toggleBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+          <nav class="pc_nav">
             <ul class="nav_list">
-              <li>
-                <a href="#">예매</a>
-                <div class="sub_nav"></div>
-              </li>
-              <li><a href="#">영화</a></li>
-              <li><a href="#">영화관</a></li>
-              <li><a href="#">이벤트</a></li>
-              <li><a href="#">스토어</a></li>
+              <li><a href="/review.html?id=13">Review</a></li>
+              <li><a href="#">Reservation</a></li>
+              <li><a href="#">Movies</a></li>
+              <li><a href="#">Event</a></li>
+              <li><a href="#">Store</a></li>
             </ul>
           </nav>
-        </header>
-        <!-- 메인 슬라이더 영역-->
-        <div id="carouselContainer">
-          <div id="carouselSlides">
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
+        </div>
+      </header>
+      <!-- Mobile Nav -->
+      <nav class="mb_nav">
+        <ul class="nav_list">
+          <li><a href="/review.html?id=13">Review</a></li>
+          <li><a href="#">Reservation</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">Event</a></li>
+          <li><a href="#">Store</a></li>
+        </ul>
+      </nav>
+      <!-- Main Slider -->
+      <div id="carouselContainer">
+        <div id="carouselSlides">
+          <div class="slide">
+            <div class="slide_text_box color_white">
+              <h2>The Godfather</h2>
+              <p>Marlon Brando and Al Pacino appeared and portrayed betrayal and love in the mafia world.</p>
+              <span>play preview <i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
+            </div>
           </div>
-          <!-- <ul id="carouselSlides">
-            <li class="slide">123123</li>
-            <li class="slide">234234</li>
-            <li class="slide">345345</li>
-            <li class="slide">456456</li>
-          </ul> -->
-
-          <i class="fa-solid fa-chevron-left"></i>
-          <i class="fa-solid fa-chevron-right"></i>
-
-          <div class="youtubePopup hidden">
-            <div id="player"></div>
-            <i class="fa-solid fa-xmark"></i>
+          <div class="slide">
+            <div class="slide_text_box color_black">
+              <h2>Your Name.</h2>
+              <p>High schoolers Mitsuha and Taki are complete strangers living separate lives. </p>
+              <span>play preview <i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
+            </div>
           </div>
+          <div class="slide">
+            <div class="slide_text_box color_white">
+              <h2>Spirited Away</h2>
+              <p>A young girl, Chihiro, becomes trapped in a strange new world of spirits. </p>
+              <span>play preview <i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide_text_box color_white">
+              <h2>Parasite</h2>
+              <p>Marlon Brando and Al Pacino appeared and portrayed betrayal and love in the mafia world.</p>
+              <span>play preview <i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <i class="fa-solid fa-chevron-left"></i>
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <div class="youtubePopup hidden">
+          <div id="player"></div>
+          <i class="fa-solid fa-xmark"></i>
         </div>
       </div>
-      <!-- 검색창 영역 -->
-      <form class="search" id="searchForm">
-        <input
-          type="text"
-          id="movieSearch"
-          name="search"
-          placeholder="영화 제목을 검색해보세요"
-          autofocus
-        />
-        <button type="submit" id="searchButton">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
+
 
       <section class="section">
-        <!-- 영화 상세페이지 영역 -->
-        <article class="subpage">
-          <div id="cardsGroup"></div>
-        </article>
-        <!-- 시사회/무대인사 영역 -->
-        <article class="preview">
-          <h2>시사회/무대인사</h2>
-        </article>
-        <!-- 더 많은 정보 영역 -->
-        <article class="information">
-          <h2>이벤트</h2>
-        </article>
-        <!-- 공지사항 영역 -->
+        <!-- Notice -->
         <article class="notice">
-          <h2>공지사항</h2>
-        </article>
-        <!-- 광고 배너 영역-->
-        <article class="banner">
-          <h2>광고 배너</h2>
-        </article>
-      </section>
-
-      <!-- 푸터 영역 -->
-      <footer class="footer">
-        <div class="footer_content">
-          <div class="footer_infbox">
-            <img
-              class="footer_logo"
-              src="./img/main/footer_logo.png"
-              alt="푸터 로고"
-            />
-            <ol class="made_list">
-              <li>한예슬</li>
-              <li>이수진</li>
-              <li>이승빈</li>
-              <li>강희진</li>
-              <li>김연희</li>
-              <li>이보아</li>
-            </ol>
-            <p>Copyright © CINEMA Cultureworks All Right Reserved.</p>
+          <h2>Notice</h2>
+          <div id="Wlogo">
+            <img src="./img/main/cloud_weather.PNG" alt="날씨이미지" id="Weather">
+            <p>Today's weather</p>
           </div>
-          <ul class="social_media_list">
-            <li>
-              <a href="#">
-                <img src="./img/main/footer_youtube_icon.png" alt="유투브"
-              /></a>
+          <ul class="noticeContainer">
+            <li class="noticeItem">
+              <span class="noticeItem_title">GoodFellas</span>
+              <span class="noticeItem_text">The true story of Henry Hill, a half-Irish, half-Sicilian Brooklyn kid who
+                is adopted by neighbourhood</span>
             </li>
-            <li>
-              <a href="#"
-                ><img src="./img/main/footer_facebook_icon.png" alt="페이스북"
-              /></a>
+            <li class="noticeItem">
+              <span class="noticeItem_title">inema Paradiso</span>
+              <span>A filmmaker recalls his childhood, when he fell in love with the movies at his village's theater
+                and formed a deep friendship</span>
             </li>
-            <li>
-              <a href="#">
-                <img
-                  src="./img/main/footer_instagram_icon.png"
-                  alt="인스타그램"
-                />
-              </a>
+            <li class="noticeItem">
+              <span class="noticeItem_title">The Godfather Part II</span>
+              <span class="noticeItem_text">In the continuing saga of the Corleone crime family</span>
+            </li>
+            <li class="noticeItem">
+              <span class="noticeItem_title">Radical</span>
+              <span class="noticeItem_text">In a Mexican border town plagued by neglect, corruption</span>
+            </li>
+            <li class="noticeItem">
+              <span class="noticeItem_title">Parasite</span>
+              <span class="noticeItem_text">All unemployed, Ki-taek's family takes peculiar interest in the wealthy and
+                glamorous Parks for
+                their livelihood </span>
             </li>
           </ul>
-        </div>
-      </footer>
+        </article>
+        <!-- Information -->
+        <article class="information">
+          <h2>Box Office</h2>
+          <div class="rolling_movie_controls">
+            <a href="#" class="rm_stop_btn active" class="rm_stop_btn"><i class="fa fa-stop-circle"
+                aria-hidden="true"></i></a>
+            <a href="#" class="rm_play_btn"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+          </div>
+          <div class="rolling_movie_slides_wrapper">
+            <ul class="rolling_movie_slides">
+              <!-- view slides -->
+            </ul>
+          </div>
+        </article>
+        <!-- Search -->
+        <form class="search" id="searchForm">
+          <input type="text" id="movieSearch" name="search" placeholder="Search the movie title" autofocus />
+          <button type="submit" id="searchButton">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <!-- Weekly Movie -->
+        <article class="subpage">
+          <h2>Weekly Movie</h2>
+          <div id="cardsGroup"></div>
+        </article>
+        <!-- banner -->
+        <article class="banner">
+          <div id="adBanner"></div>
+        </article>
+      </section>
     </div>
-    <script>
-      window.onload = () => {
-        window.scrollTo(0, 0);
-      };
-    </script>
-    <script
-      src="https://kit.fontawesome.com/8eb5905426.js"
-      crossorigin="anonymous"
-    ></script>
-    <script type="module" src="./modules/display.js"></script>
-    <script type="module" src="./modules/main.js"></script>
-    <script type="module" src="./modules/mainSlide2.js" defer></script>
-    <script type="module" src="./modules/youtube.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script
-      src="https://kit.fontawesome.com/4bbbcee7af.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer_content">
+        <div class="footer_infbox">
+          <img class="footer_logo" src="./img/main/footer_logo.png" alt="푸터 로고" />
+          <ol class="made_list">
+            <li>한예슬</li>
+            <li>이수진</li>
+            <li>이승빈</li>
+            <li>강희진</li>
+            <li>김연희</li>
+            <li>이보아</li>
+          </ol>
+          <p>Copyright © CINEMA Cultureworks All Right Reserved.</p>
+        </div>
+        <ul class="social_media_list">
+          <li>
+            <a href="#">
+              <img src="./img/main/footer_youtube_icon.png" alt="유투브" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./img/main/footer_facebook_icon.png" alt="페이스북" /></a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/main/footer_instagram_icon.png" alt="인스타그램" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="./modules/display.js"></script>
+  <script type="module" src="./modules/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+  <script type="module" src="./modules/common.js"></script>
+  <script type="module" src="./modules/rolling_slider.js"></script>
+  <script type="module" src="./modules/mainSlide.js" defer></script>
+  <script type="module" src="./modules/youtube.js" defer></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://kit.fontawesome.com/4bbbcee7af.js" crossorigin="anonymous"></script>
+  <script>
+    window.onload = () => {
+      window.scrollTo(0, 0);
+    };
+  </script>
+</body>
+</body>
+
 </html>
