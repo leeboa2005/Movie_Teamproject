@@ -2,8 +2,7 @@
 const navToggleBtn = document.querySelector(".nav_toggleBtn");
 const nav = document.querySelector(".mb_nav");
 
-navToggleBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+navToggleBtn.addEventListener("click", () => {
   nav.classList.toggle("active");
   navToggleBtn.classList.toggle("active");
 });
